@@ -3,7 +3,7 @@ from scrapy.linkextractors.lxmlhtml import LxmlLinkExtractor
 from scrapy.selector import Selector
 from scrapy.spiders import Spider
 
-from jdbook.jdbook import JDBookItem
+from jdbook.items import JdbookItem
 
 
 class JDBookSpider(Spider):
@@ -27,7 +27,7 @@ class JDBookSpider(Spider):
         yield Request(self.start_urls[0],callback=self.parse,headers=self.headers,cookies=self.cookies,meta=self.meta)
     def parse(self, response):
         selector = Selector(response)
-        item = JDBookItem()
+        item = JdbookItem()
         extractor = LxmlLinkExtractor(allow=r'http://item.jd.com/\d.*html')
         link = extractor.extract_links(response)
         try:
