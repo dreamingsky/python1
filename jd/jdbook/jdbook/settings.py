@@ -66,7 +66,7 @@ ROBOTSTXT_OBEY = True
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     #'jdbook.pipelines.JdbookPipeline': 300,
-    'jdbook.pipelines.JdbookPipeline': 300,
+    'jdbook.pipelines.JdbookSqlLine': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
